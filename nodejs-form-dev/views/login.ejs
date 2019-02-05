@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Регистрация и Вход</title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <h1>Регистрация и Вход</h1>
+
+      <p>
+        Введите имя пользователя и пароль. Если такого пользователя нет - он
+        будет создан.
+      </p>
+
+      <div class="alert alert-success hidden"></div>
+      <div class="alert alert-danger hidden"></div>
+
+      <form
+        class="form-horizontal login-form"
+        action="/login"
+        method="POST"
+        name="loginForm"
+      >
+        <!--email (make it ask 1st time only) -->
+        <div class="form-group">
+          <label for="input-email" class="col-lg-2 control-label">Email</label>
+
+          <div class="col-lg-10">
+            <input
+              name="email"
+              value="email"
+              type="text"
+              class="form-control"
+              id="input-email"
+              placeholder="Email"
+            />
+          </div>
+        </div>
+        <!--username-->
+        <div class="form-group">
+          <label for="input-username" class="col-lg-2 control-label"
+            >Логин</label
+          >
+
+          <div class="col-lg-10">
+            <input
+              name="username"
+              value="name"
+              type="text"
+              class="form-control"
+              id="input-username"
+              placeholder="Имя"
+            />
+          </div>
+        </div>
+        <!-- password -->
+        <div class="form-group">
+          <label for="input-password" class="col-lg-2 control-label"
+            >Пароль</label
+          >
+
+          <div class="col-lg-10">
+            <input
+              name="password"
+              value="pass"
+              type="password"
+              class="form-control"
+              id="input-password"
+              placeholder="Пароль"
+            />
+          </div>
+        </div>
+
+        <!--submit button-->
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-loading-text="Отправляю..."
+            >
+              Войти
+            </button>
+            <span class="help-block error"></span>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="copyright center-block text-center">
+          © <a href="https://vk.com/superbrjn" style="color: #507299;">бржн</a>,
+          2019.
+        </div>
+      </div>
+    </footer>
+    <script src="/javascripts/loginHelper.js"></script>
+  </body>
+</html>

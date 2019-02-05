@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru-Ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Страница отзывов</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+  <noscript>
+      <div class="noscript-message">Из соображений корректного отображения этой страницы, просим включить JavaScript и/или установить браузер, поддерживающий его. Простите за неудобства. <a href="https://support.google.com/adsense/answer/12654?hl=ru">Здесь можно ознакомиться с инструкцией по подключению</a>.</div>
+  </noscript>
+
+  <h1 class="text-center page-header">Отправьте нам свои пожелания</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h2 class="h3 panel-title">Форма обратной связи</h3>
+          </div>
+          <div class="panel-body">
+
+            <!-- Успешно -->
+            <div class="alert alert-success hidden">
+              <p>Форма успешно отправлена. Спасибо!</p>
+            </div>
+            <!-- Ошибка -->
+            <div class="alert alert-danger hidden">
+              <p>Ошибка! Что-то пошло не так.</p>
+            </div>
+
+            <!-- Форма (enctype="multipart/form-data" novalidate) -->
+            <form name="feedbackForm" >
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Имя пользователя -->
+                  <div class="form-group has-feedback">
+                    <label for="name" class="control-label">Имя *:</label>
+                    <input type="text" name="name" data-name="Имя" class="form-control" value="Евграфий" placeholder="Поликарп" minlength="2" maxlength="30" required>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <!-- Email пользователя -->
+                  <div class="form-group has-feedback">
+                    <label for="email" class="control-label">Email *:</label>
+                    <input type="email" name="email" data-name="Электропочта" class="form-control" value="yollo@eto.ya" placeholder="polikarp@mail.org" maxlength="30" required>
+                    <span class="glyphicon form-control-feedback"></span>
+                  </div>
+                </div>
+              </div>
+              <!-- Сообщение пользователя -->
+              <div class="form-group has-feedback">
+                <label for="message" class="control-label">Введите сообщение *:</label>
+                <textarea name="message" data-name="Сообщение" class="form-control" rows="3" placeholder="Введите сообщение (не менее 20 символов)" minlength="20" maxlength="500" required>Какой-то текст для проверки.</textarea>
+              </div>
+              <!-- Файлы пользователя -->
+              <div class="form-group">
+                <p style="font-weight: 700;">Прикрепить к сообщению изображения (не более 320х240 пикселей):</p>
+                <input type="file" name="image" accept="image/*" multiple >
+                <p style="margin-top: 3px; margin-bottom: 3px; color: #ff0000;"></p>
+              </div>
+              <hr style="margin-top: 3px; margin-bottom: 3px;">
+
+              <!--Список файлов загруженных пользователем-->
+              <ul class="filenameList" name="fnamelist"></ul>
+
+              <!-- Кнопки -->
+              <button name="preview" type="button" class="btn preview">Превью</button>
+              <button name="send-message" type="submit" class="btn btn-primary pull-right">Отправить сообщение</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Предпросмотр -->
+  <section class="comments">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+  
+          <output class="preview-msg"></output>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Отзывы (заглушка, пока остальное пишу) -->
+<section class="comments">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+
+        <!-- Сортировочка -->
+        <div class="sorting">
+          <p>Показать отзывы</p>>
+            <button name="author-sort" type="button" class="btn">По имени</button>
+            <button name="email-sort" type="button" class="btn">По email</button>
+            <button name="date-sort" type="button" class="btn">Последние</button>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"></h4>
+              <p class="card-text">Это первый комментарий!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title"></h4>
+              <p class="card-text">Это второй комментарий!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="main-footer">
+    <div class="container">
+        <div class="copyright center-block text-center">© <a href="https://vk.com/superbrjn" style="color: #507299;">бржн</a>, 2019.</div>
+    </div>
+  </footer>
+
+  <!--<script src="app.js"></script>-->
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>
