@@ -1,0 +1,421 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.container {
+  width: 980px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main-header {
+  padding-top: 65px;
+  padding-bottom: 105px;
+  color: #ffffff;
+  background-color: #6451D5;
+  background-image: url("../img/bg-header.jpg");
+  background-position: center 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-top {
+  margin-bottom: 120px;
+}
+
+.header-top::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.logo {
+  float: left;
+  width: 180px;
+  height: 100px;
+}
+
+.main-menu {
+  float: right;
+  width: 680px;
+  margin-top: 25px;
+}
+
+.main-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-right: 40px;
+  vertical-align: top;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.main-menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-menu a:hover {
+  text-decoration: underline;
+}
+
+.main-menu a:active {
+  text-decoration: none;
+  color: #9D93E2;
+}
+
+.btn {
+  display: inline-block;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: top;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.btn-purple {
+  background: #382D78;
+}
+
+.btn-purple:hover {
+  background: #32286C;
+}
+
+.btn-purple:active {
+  background: #32286C;
+  color: #8581A1;
+}
+
+.promo {
+  position: relative;
+  z-index: 10;
+  width: 450px;
+}
+
+.promo::after{
+  content: "";
+  position: absolute;
+  top: -90px;
+  left: 240px;
+  width: 840px;
+  height: 460px;
+  /*  Пример подключения изображения из папки  img */
+  background-image: url("../img/bg-promo.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: -1;
+}
+
+.promo-title {
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.promo p {
+  margin: 0;
+  margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.promo .btn {
+  margin-top: 12px;
+  width: 260px;
+}
+
+.features {
+  padding-top: 150px;
+  padding-bottom: 75px;
+  background-color: #efefef;
+}
+
+.features .container::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.features-item {
+  position: relative;
+  float: left;
+  width: 300px;
+  margin-right: 40px;
+}
+
+.features-item:last-child {
+  margin-right: 0;
+}
+
+.features-title {
+  margin: 0;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.features-item p {
+  margin: 0;
+  color: #404040;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.features-icon {
+  position: absolute;
+  top: -108px;
+  left: 50px;
+  width: 100px;
+  height: 108px;
+  background-image: url("../img/sprite.png");
+}
+
+.features-icon-schedule {
+  background-position: -5px 1px;
+}
+
+.features-icon-practice {
+  background-position: -125px 1px;
+}
+
+.features-icon-work {
+  background-position: -235px 1px;
+}
+
+.programm {
+  padding-top: 85px;
+  padding-bottom: 80px;
+}
+
+.programm-title,
+.contacts-title {
+  margin: 0;
+  margin-bottom: 65px;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.programm-options table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.programm-options td {
+  padding: 10px 19px;
+  border: 1px solid #d3d2d2;
+  border-collapse: collapse;
+  color: #404040;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.programm-options thead td {
+  background: #efefef;
+  font-weight: normal;
+}
+
+.programm-options td strong {
+  white-space: nowrap;
+}
+
+.contacts {
+  padding-top: 85px;
+  padding-bottom: 65px;
+  background-color: #efefef;
+}
+
+.contacts .container {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.contacts-form {
+  float: left;
+  width: 640px;
+}
+
+.contacts-form td {
+  padding-bottom: 16px;
+}
+
+.contacts-form .title {
+  width: 90px;
+  padding-right: 20px;
+  vertical-align: top;
+  text-align: right;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 46px;
+}
+
+.contacts-form .field {
+  width: 470px;
+}
+
+.contacts-form input[type="text"],
+.contacts-form textarea {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 13px 23px;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  line-height: 24px;
+  outline: none;
+  border: 2px solid #b2b2b2;
+  border-radius: 2px;
+}
+
+.contacts-form input[type="text"]:hover,
+.contacts-form textarea:hover {
+  border: 2px solid #7f7f7f;
+}
+
+.contacts-form input[type="text"]:focus,
+.contacts-form textarea:focus {
+  border: 2px solid #6451D5;
+}
+
+.contacts-form textarea {
+  min-height: 105px;
+  resize: none;
+}
+
+.contacts-form .btn {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.contacts-instruction {
+  float: right;
+  width: 300px;
+}
+
+.contacts-instruction h3 {
+  margin: 0;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.contacts-instruction p {
+  margin: 0;
+  margin-bottom: 25px;
+  color: #404040;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.contacts-instruction .contacts-alert {
+  margin-top: 60px;
+}
+
+.contacts-instruction .contacts-alert {
+  margin-bottom: 0;
+}
+
+.contacts-alert strong {
+  color: #000000;
+}
+
+/*Footer*/
+.main-footer {
+  padding-top: 95px;
+  padding-bottom: 75px;
+  background-color: #2A2546;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer-top::after,
+.footer-bottom::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.footer-address {
+  float: left;
+  width: 300px;
+  margin-right: 40px;
+}
+
+.footer-address .logo {
+  float: none;
+}
+
+.footer-address p {
+  margin: 0;
+  margin-top: 60px;
+}
+
+.footer-menu {
+  float: left;
+  width: 150px;
+  margin-top: 25px;
+}
+
+.footer-menu:last-child {
+  float: right;
+  width: 135px;
+}
+
+.footer-menu h3 {
+  margin: 0;
+  margin-bottom: 35px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-menu li {
+  margin-bottom: 24px;
+}
+
+.footer-menu a {
+  color: #A39EBE;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer-menu a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-menu a:active {
+  text-decoration: none;
+  opacity: 0.3;
+}
