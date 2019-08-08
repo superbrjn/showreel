@@ -1,0 +1,41 @@
+<h2 class="page-header">Dashboard</h2>
+
+<form class="well" (submit)="addPost($event)">
+  <div class="form-group">
+    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Post">
+  </div>
+</form>
+
+<div class="container">
+  <h1>Posts Feed</h1>
+  <hr>
+
+  <!-- posts-feed of this.user-->
+  <!-- followed and this.user/author posts-->
+  <div class="post-list">
+    <div *ngFor="let post of posts">
+
+      <!-- nickname -->
+      <div class="col-md-12">
+        <a (click)="onNicknameClick(user.id)">{{post.author.nickname}}</a>
+      </div>
+
+      <div class="col-md-6">
+        {{post.title}}
+      </div>
+
+      <div *ngIf="this.user === post.author">
+        <div class="col-md-3">
+          <input type="button" (click)="updatePost(post)" class="btn btn-info" value="Edit">
+        </div>
+
+        <div class="col-md-3">
+          <input type="button" (click)="deletePost(post._id)" class="btn btn-danger" value="Delete">
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+</div>

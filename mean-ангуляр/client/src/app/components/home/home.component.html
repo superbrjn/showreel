@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+  <h1>MEAN Auth App</h1>
+  <p class="lead">Welcome to app build from scratch</p>
+  <div>
+    <a class="btn btn-primary" [routerLink]="['/register']">Register</a> <a class="btn btn-deault" [routerLink]="['/login']">Login</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Express Backend</h3>
+    <p>Node.js/Express server using Mongoose</p>
+  </div>
+  <div class="col-md-4">
+    <h3>JWT tokens</h3>
+    <p>Login and store data using Json Web Tokens and Local Storage</p>
+  </div>
+  <div class="col-md-4">
+    <h3>User roles</h3>
+    <p>RESTful API with different roles and file uploads</p>
+  </div>
+</div>
+
+<!-- all users posts-->
+<div class="post-list">
+  <div *ngFor="let post of posts">
+    <!-- nickname -->
+    <div class="col-md-12">
+      <a (click)="onNicknameClick(user.id)">{{post.author.nickname}}</a>
+    </div>
+
+    <div class="col-md-12">
+      {{post.title}}
+    </div>
+    <hr>
+
+  </div>
+</div>

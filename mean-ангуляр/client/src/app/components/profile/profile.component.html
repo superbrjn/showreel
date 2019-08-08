@@ -1,0 +1,65 @@
+<!-- profile-card-info of this.user-->
+<div *ngIf="user">
+  <h2 class="page-header">{{user.name}}</h2>
+  <ul class="list-group">
+    <!-- avatar pic -->
+    <li class="list-group-item">Username: {{user.username}}</li>
+    <li class="list-group-item">Email: {{user.email}}</li>
+  </ul>
+
+  <div *ngIf="profile.user === this.user">
+    <div class="col-md-3">
+      <input type="button" (click)="editUser(user)" class="btn btn-info" value="Edit">
+    </div>
+
+    <div class="col-md-3">
+      <input type="button" (click)="deleteUser(user._id)" class="btn btn-danger" value="Delete">
+    </div>
+  </div>
+
+  <div *ngIf="profile.user !== this.user">
+    <div class="col-md-3">
+      <input type="button" (click)="follow(user)" class="btn btn-info" value="Follow">
+    </div>
+
+    <div class="col-md-3">
+      <input type="button" (click)="unfollow(user._id)" class="btn btn-info" value="Unfollow">
+    </div>
+  </div>
+
+</div>
+
+<div *ngIf="profile.user === this.user">
+  <form class="well" (submit)="addPost($event)">
+    <div class="form-group">
+      <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Post">
+    </div>
+  </form>
+</div>
+
+<!-- posts-feed of this.user-->
+<div class="post-list">
+  <div *ngFor="let post of posts">
+    <!-- nickname is a link! -->
+    <div class="col-md-12">
+      <a (click)="onNicknameClick(user.id)">{{post.author.nickname}}</a>
+    </div>
+
+    <div class="col-md-6">
+      {{post.title}}
+    </div>
+
+    <div *ngIf="profile.user === post.author">
+      <div class="col-md-3">
+        <input type="button" (click)="updatePost(post)" class="btn btn-info" value="Edit">
+      </div>
+
+      <div class="col-md-3">
+        <input type="button" (click)="deletePost(post._id)" class="btn btn-danger" value="Delete">
+      </div>
+    </div>
+
+    <hr>
+
+  </div>
+</div>

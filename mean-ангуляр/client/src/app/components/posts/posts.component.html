@@ -1,0 +1,23 @@
+<form class="well" (submit)="addPost($event)">
+  <div class="form-group">
+    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Post">
+  </div>
+</form>
+
+<div class="post-list">
+  <div *ngFor="let post of posts">
+
+    <div class="col-md-6">
+      {{post.title}}
+    </div>
+
+    <div class="col-md-3">
+      <input type="button" (click)="updatePost(post)" class="btn btn-info" value="Edit">
+    </div>
+
+    <div class="col-md-3">
+      <input type="button" (click)="deletePost(post._id)" class="btn btn-danger" value="Delete">
+    </div>
+
+  </div>
+</div>
