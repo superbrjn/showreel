@@ -1,0 +1,29 @@
+// условия
+- var user = localStorage.getItem("user_id")
+// Панель навигации
+header.main-header
+  nav.navbar.navbar-default.navbar-static-top(role='navigation')
+    .container
+      .navbar-header
+        a.navbar-brand(href='https://vk.com')
+          img(alt='vk-ref', src='img/daug.jpg', border='0', width='20', height='20')
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='#', style='color:#ffffff;') ВэКа-Санитайзер
+          li
+            //
+              <li><a href="vk-btn">vk</a><li>
+              <li><a href="tw-btn">tw</a><li>
+              <li><a href="fb-btn">fb</a><li>
+        ul.nav.navbar-nav.navbar-right
+          #auth
+            if !user.user_id
+              li
+                a.vk-login-button(role='button', style='color:#ffffff;') Войти
+              li
+            else
+              li
+                a.vk-logout-button(role='button', style='color:#ffffff;') Выйти
+              li
+              

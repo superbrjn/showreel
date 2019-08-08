@@ -1,0 +1,153 @@
+body {
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-family: "-apple-system", "BlinkMacSystemFont", "Roboto", "Open Sans",
+    "Helvetica Neue", sans-serif;
+  line-height: 1.154;
+  font-weight: 400;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.container {
+  width: 960px !important;
+  margin-left: 153px;
+}
+
+.navbar {
+  background-color: #507299 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  border-bottom: 0 !important;
+}
+
+.navbar-brand {
+  padding: 10px 10px !important;
+  font-size: 18px;
+  line-height: 20px;
+  height: 40px !important;
+  margin: 0 !important;
+}
+
+.navbar-nav > li > a {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  line-height: 20px !important;
+  margin: 0 !important;
+}
+
+/*dunno whatfor*/
+.cover-wrap {
+  width: 100%;
+  height: 375px;
+  position: relative;
+  margin-top: 0px;
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: url("../img/about_cover_2x.jpg") no-repeat 50%;
+  background-image: url("../img/about_cover_2x.jpg");
+  background-position-x: 50%;
+  background-position-y: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; /* 100% */
+  background-repeat: no-repeat;
+  /*background-repeat-y: no-repeat;*/
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+/*Значение больше 1 увеличивает масштаб элемента, меньше 1 — уменьшает масштаб.*/
+.cover-scaling {
+  -webkit-transition: all cubic-bezier(0.12, 0.53, 0.42, 0.82) 5s; /*here: All equal to Background*/
+  -moz-transition: all cubic-bezier(0.12, 0.53, 0.42, 0.82) 5s;
+  -o-transition: all cubic-bezier(0.12, 0.53, 0.42, 0.82) 5s;
+  -ms-transition: all cubic-bezier(0.12, 0.53, 0.42, 0.82) 5s;
+  transition: all 5s cubic-bezier(0.12, 0.53, 0.42, 0.82) 0s;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+
+.big-title {
+  font-size: 39px;
+  letter-spacing: -0.1px;
+  color: #2b2f33;
+  font-weight: 300;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  padding-top: 42px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  color: #000;
+  line-height: 32px;
+  font-size: 22px;
+  font-weight: 300;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  text-align: center;
+  width: 780px;
+  margin: 51px auto 0px;
+}
+
+.p1 {
+  margin-bottom: 15px;
+}
+.p2 {
+  margin-bottom: 66px;
+}
+
+.title-descr {
+  color: #2a5885;
+  font-size: 32px;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  line-height: 65px;
+  display: block;
+  padding-left: 203px;
+}
+
+.descr {
+  color: #000;
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 1px;
+}
+.btn {
+  background-color: #507299 !important;
+}
+
+.main-container {
+  background-color: #f7f8fa;
+  padding-bottom: 46px;
+}
+
+.comment-container {
+  background-color: #ffffff;
+  margin-top: 46px;
+}
+
+footer {
+  background-color: #ffffff;
+  margin-top: 46px;
+  margin-bottom: 16px;
+}

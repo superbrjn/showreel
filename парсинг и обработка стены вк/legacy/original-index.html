@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sanitizer</title>
+
+    <!-- Подключаем Custom CSS и bootstrap /проверь адрес! -->
+    <link href="css/css.css" rel="stylesheet" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <!-- Подключаем Custom Fonts /проверь адрес! -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Gloria+Hallelujah|Open+Sans|Roboto|Helvetica+Neue"
+      rel="stylesheet"
+    />
+
+    <!-- VK Authorisation -->
+    <!--
+      <script
+        type="text/javascript"
+        src="//vk.com/js/api/openapi.js?136"
+      ></script>
+      <script type="text/javascript">
+        VK.init({ apiId: 5560093, onlyWidgets: true });
+      </script>
+    -->
+  </head>
+
+  <body>
+    <noscript>
+      <div class="noscript-message">
+        Чтобы страница корректно отображалась, пожалуйста, включите JavaScript
+        и/или установите браузер, поддерживающий его. Простите за неудобства.
+        <a href="https://support.google.com/adsense/answer/12654?hl=ru"
+          >Здесь можно ознакомиться с инструкцией по подключению</a
+        >.
+      </div>
+    </noscript>
+
+    <!-- Панель навигации -->
+    <header class="main-header">
+      <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="https://vk.com">
+              <img
+                alt="vk-ref"
+                src="img/daug.jpg"
+                border="0"
+                width="20"
+                height="20"
+              />
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#" style="color:#ffffff;">ВэКа-Санитайзер</a></li>
+              <li>
+                <!--
+                  <li><a href="vk-btn">vk</a><li>
+                  <li><a href="tw-btn">tw</a><li>
+                  <li><a href="fb-btn">fb</a><li>
+                -->
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a
+                  class="vk-login-button"
+                  role="button"
+                  onclick="VK.Auth.login(authInfo);"
+                  style="color:#ffffff;"
+                  >Войти</a
+                >
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Фотообложка + анимированное масштабирование в CSS -->
+    <div class="cover-wrap" style="width: 1266px;">
+      <div class="cover"></div>
+    </div>
+
+    <!-- Инструкция -->
+    <div class="container">
+      <h1 class="big-title">Сервис удаления непопулярных постов</h1>
+      <p class="center-block text-center p1">
+        1. Авторизируйтесь через кнопку "Войти" вверху, чтобы предоставить
+        доступ к вашей стене.
+      </p>
+      <p class="center-block text-center p2">
+        2. Выберите условия для удаления публикаций <br />(например: стереть все
+        записи со стены, <br />которые не набрали 10-ти лайков, 5-ти репостов, и
+        0 комментариев).
+      </p>
+    </div>
+
+    <!-- Сегмент выбора условий и кнопка -->
+    <div class="main-container">
+      <div class="container">
+        <!-- Успех -->
+        <div
+          id="success_message"
+          class="alert alert-success hidden"
+          role="alert"
+        >
+          <strong>Ура!</strong> Срамота подчищена.
+        </div>
+        <!-- Ошибка -->
+        <div id="error_message" style="width:100%; height:100%; display:none; ">
+          <h3>Ошибка</h3>
+          Извините, произошла ошибка.
+        </div>
+
+        <!-- Форма -->
+        <form
+          id="messageForm"
+          enctype="multipart/form-data"
+          class="form-inline"
+          method="POST"
+        >
+          <div class="row">
+            <div class="col-lg-12">
+              <h5 class="center-block title-descr">
+                Стереть записи, набравшие
+              </h5>
+            </div>
+          </div>
+
+          <!-- Ошибка -->
+          <div
+            id="error"
+            class="col-sm-12"
+            style="color: #ff0000; margin-top: 5px; margin-bottom: 5px;"
+          ></div>
+
+          <div class="row">
+            <div class="form-group has-feedback">
+              <div class="col-lg-2 descr">менее</div>
+              <div class="col-lg-2">
+                <input
+                  type="number"
+                  id="likes"
+                  name="likes"
+                  required="required"
+                  value=""
+                  placeholder="12"
+                  minlength="1"
+                  maxlength="6"
+                />
+                <div class="descr">лайков</div>
+              </div>
+              <span class="glyphicon form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+              <div class="col-lg-2 descr">менее</div>
+              <div class="col-lg-2">
+                <input
+                  type="number"
+                  id="reposts"
+                  name="reposts"
+                  required="required"
+                  value=""
+                  placeholder="10"
+                  minlength="1"
+                  maxlength="6"
+                />
+                <div class="descr">репостов</div>
+              </div>
+              <span class="glyphicon form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback">
+              <div class="col-lg-2 descr">менее</div>
+              <div class="col-lg-2">
+                <input
+                  type="number"
+                  id="comments"
+                  name="comments"
+                  required="required"
+                  value=""
+                  placeholder="0"
+                  minlength="1"
+                  maxlength="6"
+                />
+                <div class="descr">комментариев</div>
+              </div>
+              <span class="glyphicon form-control-feedback"></span>
+            </div>
+          </div>
+
+          <!-- Кнопки, отправляющие форму по AJAX -->
+          <div class="row">
+            <div class="col-lg-12">
+              <button
+                name="send-message"
+                type="submit"
+                class="btn btn-primary pull-right btn-lg btn-success"
+                id="btnDel"
+              >
+                Очистить стену
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- UX-сегменты -->
+
+    <div class="container"><!-- vk wall (posts) vidget --></div>
+
+    <!--
+      <div class="container">
+        <div class="row">
+          <div id="vk_comments"></div>
+          <script type="text/javascript">
+            VK.Widgets.Comments("vk_comments", {
+              limit: 10,
+              width: "665",
+              attach: "*"
+            });
+          </script>
+        </div>
+      </div>
+    -->
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="copyright center-block text-center">
+          © <a href="https://vk.com/superbrjn" style="color: #507299;">бржн</a>,
+          2017.
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- social buttons -->
+    <!--
+      <script
+        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-587205d1b13feae9"
+        type="text/javascript"
+      ></script>
+    -->
+  </body>
+</html>
