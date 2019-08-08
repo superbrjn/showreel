@@ -1,0 +1,13 @@
+/* UPLOAD */
+.upload-content {
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+
+  /* background: grey; */
+}

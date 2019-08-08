@@ -1,0 +1,23 @@
+/* CONTENT */
+.content-list {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr);
+}
+
+.content-list__item {
+  padding: 0 1em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  /* background: #0073de; */
+}
+
+/* Content */
+.content-list__item:nth-child(even) {
+  background: var(--colorAccentLight); /*turquoise;*/
+}
+.content-list__item:nth-child(odd) {
+  background: var(--colorAccentDark); /*darkred;*/
+}

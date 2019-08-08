@@ -1,0 +1,60 @@
+/* HEADER */
+.header-content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /* background: yellowgreen; */
+}
+
+/* .header__title {
+    background: lightpink;
+  } */
+
+/* Icons and Logo */
+.header__logo {
+  height: 100px;
+  width: 100px;
+  fill: var(--colorPrimary);
+}
+/**
+   * Visually hidden accessible label
+   * Using styles that do not hide the text in screen readers
+   * We use !important because we should not apply other styles to this hidden alternative text
+   */
+.access-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+.icon {
+  /* Use the current text color as the icon’s fill color. */
+  /* fill: var(--colorPrimary); */
+  fill: currentColor;
+  /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+  width: 2em;
+  height: 2em;
+  /* The default vertical-align is `baseline`, which leaves a few pixels of space below the icon. Using `center` prevents this. For icons shown alongside text, you may want to use a more precise value, e.g. `vertical-align: -4px` or `vertical-align: -0.15em`. */
+  vertical-align: middle;
+  /* Paths and strokes that overflow the viewBox can show in IE11. */
+  overflow: hidden;
+  margin: 5px;
+
+  /* all btns - default animation */
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  opacity: 1;
+}
+.icon:hover {
+  opacity: 0.7;
+}
+.icon-rotary {
+  transform: scale(1) rotate(0);
+  /* fill: #0d8787; */
+}
+.icon-rotary:hover {
+  transform: scale(0.8) rotate(180deg);
+  /* fill: #4ec2c2; */
+}

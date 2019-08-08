@@ -1,0 +1,108 @@
+/*
+ * Сброс Дефолтных кнопок и ссылок
+**/
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+/**
+   * Button component
+  **/
+.btn {
+  /* default for <button>, but needed for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* old-school "down" effect on clic + color tweak */
+.btn:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+
+/* inverse colors on hover */
+.btn:hover {
+  color: var(var(--colorPrimary));
+  border-color: currentColor;
+  background-color: var(--colorAccent);
+}
+
+/* Firefox: remove the inner border shown on focus */
+.btn::-moz-focus-inner {
+  border: none;
+}
+/* make sure we have a visible focus ring */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07), 0 0 0 1.5px rgba(0, 0, 0, 0.07);
+}
+/* hide focus style if not from keyboard navigation */
+.js-focus-visible .btn:focus:not(.focus-visible) {
+  box-shadow: none;
+}
+
+.btn__active {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: transparent;
+}
+
+/* link color set */
+a {
+  color: currentColor;
+  /* transition: color 0.3s; */
+}
+/* a:visited {
+    color: rebeccapurple;
+  } */
+
+a:hover,
+a:focus {
+  color: var(--colorAccent);
+}
+
+a:active {
+  color: firebrick;
+}
+
+.btn__upload {
+  padding: 0.5em 1em;
+  border: solid 1px black;
+  border-radius: 4px;
+  background: var(--colorAccent);
+}

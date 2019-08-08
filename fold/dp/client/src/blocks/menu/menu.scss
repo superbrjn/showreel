@@ -1,0 +1,12 @@
+/* MENU */
+.filter-menu,
+.filter-options {
+  padding: 0.5em 1em;
+  border: solid 1px var(--colorPrimary);
+
+  /* border-collapse: collapse; */
+  display: grid;
+  /* gap: 1px; */
+  grid-template-columns: 1fr auto;
+  background: silver;
+}

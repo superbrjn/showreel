@@ -1,0 +1,12 @@
+// ----------------------------------------
+// Imports dispatcher
+// ----------------------------------------
+
+// Компилируйте один файл (диспетчер подключений), в котором подключаются все прочие.
+// Импортируйте файлы только в диспетчере подключений
+@import "vars.scss";
+
+@import "../blocks/layout/layout.scss";
+@import "../blocks/page-header/page-header.scss";
+//@import "../blocks/main...";
+@import "../blocks/page-footer/page-footer.scss";

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini-todo app</title>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <!-- SVG Sprite Sheet -->
+    <svg
+      width="0"
+      height="0"
+      style="display: none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <symbol id="edit-btn-icon" viewBox="0 0 576 512">
+        <path
+          d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"
+        />
+      </symbol>
+      <symbol id="filter-btn-icon" viewBox="0 0 512 512">
+        <path
+          d="M487.976 0H24.028C2.71 0-8.047 25.866 7.058 40.971L192 225.941V432c0 7.831 3.821 15.17 10.237 19.662l80 55.98C298.02 518.69 320 507.493 320 487.98V225.941l184.947-184.97C520.021 25.896 509.338 0 487.976 0z"
+        />
+      </symbol>
+      <symbol id="add-btn-icon" viewBox="0 0 512 512">
+        <path
+          d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"
+        />
+      </symbol>
+      <symbol id="close-btn-icon" viewBox="0 0 352 512">
+        <path
+          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- App -->
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <img
+            src="assets/img/anchor-solid.svg"
+            alt="app logotype"
+            class="header__logo"
+          />
+          <h1 class="header__title">Mini-todo app</h1>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="filter-menu">
+          <div class="filter-menu__toggle btn">
+            <a href="#" class="btn__active">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use
+                  xlink:href="#filter-btn-icon"
+                  href="#filter-btn-icon"
+                ></use>
+              </svg>
+              все задачи</a
+            >
+          </div>
+
+          <div class="filter-menu__add-item btn">
+            <button type="button" aria-label="Add New" class="btn__create">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use xlink:href="#add-btn-icon" href="#add-btn-icon"></use>
+              </svg>
+              <span class="access-label">Добавить задачу</span>
+            </button>
+          </div>
+
+          <!-- filter-menu__list menu -->
+        </section>
+
+        <section class="content-list">
+          <div class="content-list__item">
+            <input
+              type="checkbox"
+              name="checkboxbtn"
+              data-title="чекбокс"
+              class="content-list__checkbox"
+              checked
+            />
+            <p class="content-list__topic">Задача один</p>
+            <div class="content-list__edit-item btn">
+              <button type="button" aria-label="Edit" class="btn__edit">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use xlink:href="#edit-btn-icon" href="#edit-btn-icon"></use>
+                </svg>
+                <span class="access-label">Редактировать</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="content-list__item">
+            <input
+              type="checkbox"
+              name="checkboxbtn"
+              data-title="чекбокс"
+              class="content-list__checkbox"
+            />
+            <p class="content-list__topic">Задача два</p>
+            <div class="content-list__edit-item btn">
+              <button type="button" aria-label="Edit" class="btn__edit">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use xlink:href="#edit-btn-icon" href="#edit-btn-icon" />
+                </svg>
+                <span class="access-label">Редактировать</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="content-list__item">
+            <input
+              type="checkbox"
+              name="checkboxbtn"
+              data-title="чекбокс"
+              class="content-list__checkbox"
+            />
+            <p class="content-list__topic">Задача три</p>
+            <div class="content-list__edit-item btn">
+              <button type="button" aria-label="Edit" class="btn__edit">
+                <svg class="icon" aria-hidden="true" focusable="false">
+                  <use xlink:href="#edit-btn-icon" href="#edit-btn-icon"></use>
+                </svg>
+                <span class="access-label">Редактировать</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- content-list ends -->
+      </main>
+      <!-- content ends -->
+
+      <div class="upload">
+        <div class="upload-content btn">
+          <button type="button" aria-label="Upload" class="btn__upload">
+            Загрузить ещё
+          </button>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p class="footer__copyright">Mini-todo app © 2019</p>
+      </footer>
+    </div>
+
+    <!-- всё тут! <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

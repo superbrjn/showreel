@@ -1,0 +1,59 @@
+// ----------------------------------------
+// Layout
+// ----------------------------------------
+
+/* .page */
+html {
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: 900; /*Bold*/
+  font-size: 10px;
+  color: var(--colorPrimary);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background: linear-gradient(to right, #f93d66, #6d47d9);
+}
+
+/* BLOCKS DISPOSITION 2 */
+.app {
+  display: grid;
+  grid-gap: 1.7rem;
+  padding: 0.5em;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr 30px;
+  grid-template-areas:
+    "header"
+    "content"
+    "upload"
+    "footer";
+  min-height: calc(100vh - 30px);
+}
+.header {
+  grid-area: header;
+  /* background: #00dead; */
+}
+.filter-menu {
+  grid-area: menu;
+  /* background: #00dead; */
+}
+.content {
+  grid-area: content;
+  /* background: #00dead; */
+}
+.upload {
+  grid-area: upload;
+  /* background: #00dead; */
+}
+.footer {
+  grid-area: footer;
+  /* background: #00dead; */
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}

@@ -1,0 +1,43 @@
+<!-- фон -->
+<div class="overlay">
+  <!-- модальное окно -->
+  <div class="overlay-inner">
+    <!-- кнопка закрыть модальное окно -->
+    <div class="headbar">
+      <h3 class="modal-header">Добавление задачи</h3>
+      <button class="close-btn">
+        <svg class="icon close-btn-icon" aria-hidden="true" focusable="false">
+          <use xlink:href="#close-btn-icon" href="#close-btn-icon"></use>
+        </svg>
+      </button>
+    </div>
+    <!-- контент -->
+    <form class="modal-window" action="get">
+      <fieldset>
+        <div class="form-grid">
+          <label for="priority">Приоритет</label>
+          <select name="priority">
+            <option value="1">высокий</option>
+            <option value="2">средний</option>
+            <option value="3">низкий</option>
+          </select>
+
+          <textarea name="new-task" rows="5" cols="20"></textarea>
+
+          <div class="btn-row">
+            <div class="form btn">
+              <button type="button" class="btn__cancel">
+                Отмена
+              </button>
+            </div>
+            <div class="form btn">
+              <button type="submit" class="btn__save">
+                Сохранить
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

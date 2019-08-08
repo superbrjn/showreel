@@ -1,0 +1,193 @@
+/* ------------- modal window ---------------- */
+/*close btn*/
+.close-btn {
+  background: none;
+  color:/* white;*/ black;
+  border: 0;
+}
+
+/* overlay */
+.overlay {
+  /*closed window*/
+  position: fixed;
+  /* background: rgba(0, 0, 0, 0.7); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2; /*make on top*/
+}
+.overlay.open {
+  /*opened window*/
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+/*window*/
+.overlay-inner {
+  background: white;
+  width: 700px;
+  /* padding: 20px; */
+  border-radius: 5px;
+}
+
+/* form */
+
+/*p {
+    max-width: 40em;
+    margin: 1em auto;
+  }
+  
+  fieldset {
+    max-width: 40em;
+    padding: 4px;
+    margin: 2em auto;
+    border: 0 none;
+  }
+  
+  legend {
+    font-size: 1.2em;
+    width: 100%;
+    border-bottom: 1px dotted #99c;
+  }
+  
+  input,
+  output,
+  textarea,
+  select,
+  button {
+    box-sizing: border-box;
+    padding: 0.2em 0.4em;
+    margin: 0.2em 0;
+    outline: 0 none;
+    border: 0 none;
+    box-shadow: none;
+  }
+  
+  button {
+    max-width: 9em;
+    padding: 0.2em 2em;
+    background-color: #ddd;
+    box-shadow: 0 2px 0 #bbb;
+    cursor: pointer;
+  }
+  
+  label {
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+  }
+  
+  input:focus + label,
+  textarea:focus + label,
+  select:focus + label {
+    color: #933;
+  }
+  
+  input:checked + label {
+    font-weight: bold;
+  }*/
+
+/* grid layout */
+.headbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  background: silver;
+  color: var(--colorPrimary);
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-header {
+  padding: 5px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1em 2fr;
+  grid-template-rows: repeat(1fr);
+  grid-gap: 0.3em 0.6em;
+  /* grid-auto-flow: dense; */
+  align-items: center;
+}
+
+fieldset {
+  /* max-width: 40em;
+      padding: 4px;
+      margin: 2em auto; */
+  border: 0 none;
+}
+
+.priority,
+.new-task {
+  grid-column: 2 / 2;
+  width: auto;
+  margin: 0;
+}
+.btn-row {
+  grid-column: 2 / 3;
+  width: auto;
+  margin: 0;
+}
+
+/* input[type="checkbox"],
+  input[type="radio"] {
+    grid-column: 1 / 3;
+    justify-self: end;
+    margin: 0;
+  }
+  
+  label,
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  } */
+
+.new-task + label {
+  align-self: start;
+}
+
+.btn-row {
+  justify-items: center;
+}
+.btn__cancel {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: white;
+}
+.btn__save {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: green;
+}

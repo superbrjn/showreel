@@ -1,0 +1,488 @@
+/* Color vars */
+:root {
+  --colorAccent: #ffc600;
+  --colorAccentDark: #ff9a00;
+  --colorAccentLight: #d5ca17; /*bird-flower*/
+  --colorPrimary: #272727; /*colorAccentInverted*/
+  --colorPrimaryDark: #151515; /*cod-gray*/
+  --colorOk: turquoise;
+  --colorDanger: darkred;
+}
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900; /*Bold*/
+  font-size: 10px;
+  color: var(--colorPrimary);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background: linear-gradient(to right, #f93d66, #6d47d9);
+}
+
+/* BLOCKS DISPOSITION 2 */
+.app {
+  display: grid;
+  grid-gap: 1.7rem;
+  padding: 0.5em;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr 30px;
+  grid-template-areas:
+    "header"
+    "content"
+    "upload"
+    "footer";
+  min-height: calc(100vh - 30px);
+}
+.header {
+  grid-area: header;
+  /* background: #00dead; */
+}
+.filter-menu {
+  grid-area: menu;
+  /* background: #00dead; */
+}
+.content {
+  grid-area: content;
+  /* background: #00dead; */
+}
+.upload {
+  grid-area: upload;
+  /* background: #00dead; */
+}
+.footer {
+  grid-area: footer;
+  /* background: #00dead; */
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/* HEADER */
+.header-content {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  /* background: yellowgreen; */
+}
+
+/* .header__title {
+  background: lightpink;
+} */
+
+/* MENU */
+.filter-menu,
+.filter-options {
+  padding: 0.5em 1em;
+  border: solid 1px var(--colorPrimary);
+
+  /* border-collapse: collapse; */
+  display: grid;
+  /* gap: 1px; */
+  grid-template-columns: 1fr auto;
+  background: silver;
+}
+
+/* CONTENT */
+.content-list {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1fr);
+}
+
+.content-list__item {
+  padding: 0 1em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  /* background: #0073de; */
+}
+
+/* BUTTONS */
+/* .checkbox,
+.btn-1 {
+  height: 20px;
+  width: 20px;
+  background: #ffc600;
+} */
+
+/* UPLOAD */
+.upload-content {
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+
+  /* background: grey; */
+}
+
+.btn__upload {
+  padding: 0.5em 1em;
+  border: solid 1px black;
+  border-radius: 4px;
+  background: var(--colorAccent);
+}
+
+/* Icons and Logo */
+.header__logo {
+  height: 100px;
+  width: 100px;
+  fill: var(--colorPrimary);
+}
+/**
+   * Visually hidden accessible label
+   * Using styles that do not hide the text in screen readers
+   * We use !important because we should not apply other styles to this hidden alternative text
+   */
+.access-label {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+.icon {
+  /* Use the current text color as the icon’s fill color. */
+  /* fill: var(--colorPrimary); */
+  fill: currentColor;
+  /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+  width: 2em;
+  height: 2em;
+  /* The default vertical-align is `baseline`, which leaves a few pixels of space below the icon. Using `center` prevents this. For icons shown alongside text, you may want to use a more precise value, e.g. `vertical-align: -4px` or `vertical-align: -0.15em`. */
+  vertical-align: middle;
+  /* Paths and strokes that overflow the viewBox can show in IE11. */
+  overflow: hidden;
+  margin: 5px;
+
+  /* all btns - default animation */
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  opacity: 1;
+}
+.icon:hover {
+  opacity: 0.7;
+}
+.icon-rotary {
+  transform: scale(1) rotate(0);
+  /* fill: #0d8787; */
+}
+.icon-rotary:hover {
+  transform: scale(0.8) rotate(180deg);
+  /* fill: #4ec2c2; */
+}
+
+/*
+ * Сброс Дефолтных кнопок и ссылок
+**/
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+/**
+ * Button component
+**/
+.btn {
+  /* default for <button>, but needed for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  border-radius: 4px;
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* old-school "down" effect on clic + color tweak */
+.btn:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+
+/* inverse colors on hover */
+.btn:hover {
+  color: var(var(--colorPrimary));
+  border-color: currentColor;
+  background-color: var(--colorAccent);
+}
+
+/* Firefox: remove the inner border shown on focus */
+.btn::-moz-focus-inner {
+  border: none;
+}
+/* make sure we have a visible focus ring */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07), 0 0 0 1.5px rgba(0, 0, 0, 0.07);
+}
+/* hide focus style if not from keyboard navigation */
+.js-focus-visible .btn:focus:not(.focus-visible) {
+  box-shadow: none;
+}
+
+.btn__active {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: transparent;
+}
+
+/* link color set */
+a {
+  color: currentColor;
+  /* transition: color 0.3s; */
+}
+/* a:visited {
+  color: rebeccapurple;
+} */
+
+a:hover,
+a:focus {
+  color: var(--colorAccent);
+}
+
+a:active {
+  color: firebrick;
+}
+
+/* Content */
+.content-list__item:nth-child(even) {
+  background: var(--colorAccentLight); /*turquoise;*/
+}
+.content-list__item:nth-child(odd) {
+  background: var(--colorAccentDark); /*darkred;*/
+}
+
+/* ------------- modal window ---------------- */
+/*close btn*/
+.close-btn {
+  background: none;
+  color:/* white;*/ black;
+  border: 0;
+}
+
+/* overlay */
+.overlay {
+  /*closed window*/
+  position: fixed;
+  /* background: rgba(0, 0, 0, 0.7); */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 2; /*make on top*/
+}
+.overlay.open {
+  /*opened window*/
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+/*window*/
+.overlay-inner {
+  background: white;
+  width: 700px;
+  /* padding: 20px; */
+  border-radius: 5px;
+}
+
+/* form */
+
+/*p {
+  max-width: 40em;
+  margin: 1em auto;
+}
+
+fieldset {
+  max-width: 40em;
+  padding: 4px;
+  margin: 2em auto;
+  border: 0 none;
+}
+
+legend {
+  font-size: 1.2em;
+  width: 100%;
+  border-bottom: 1px dotted #99c;
+}
+
+input,
+output,
+textarea,
+select,
+button {
+  box-sizing: border-box;
+  padding: 0.2em 0.4em;
+  margin: 0.2em 0;
+  outline: 0 none;
+  border: 0 none;
+  box-shadow: none;
+}
+
+button {
+  max-width: 9em;
+  padding: 0.2em 2em;
+  background-color: #ddd;
+  box-shadow: 0 2px 0 #bbb;
+  cursor: pointer;
+}
+
+label {
+  box-sizing: border-box;
+  user-select: none;
+  cursor: pointer;
+}
+
+input:focus + label,
+textarea:focus + label,
+select:focus + label {
+  color: #933;
+}
+
+input:checked + label {
+  font-weight: bold;
+}*/
+
+/* grid layout */
+.headbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  background: silver;
+  color: var(--colorPrimary);
+  border-radius: 5px 5px 0 0;
+}
+
+.modal-header {
+  padding: 5px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1em 2fr;
+  grid-template-rows: repeat(1fr);
+  grid-gap: 0.3em 0.6em;
+  /* grid-auto-flow: dense; */
+  align-items: center;
+}
+
+fieldset {
+  /* max-width: 40em;
+    padding: 4px;
+    margin: 2em auto; */
+  border: 0 none;
+}
+
+.priority,
+.new-task {
+  grid-column: 2 / 2;
+  width: auto;
+  margin: 0;
+}
+.btn-row {
+  grid-column: 2 / 3;
+  width: auto;
+  margin: 0;
+}
+
+/* input[type="checkbox"],
+input[type="radio"] {
+  grid-column: 1 / 3;
+  justify-self: end;
+  margin: 0;
+}
+
+label,
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  width: auto;
+  padding: 0;
+  margin: 0;
+} */
+
+.new-task + label {
+  align-self: start;
+}
+
+.btn-row {
+  justify-items: center;
+}
+.btn__cancel {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: white;
+}
+.btn__save {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px transparent;
+  /* border-radius: 4px; */
+
+  /* button size comes from text + padding, avoid height */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: currentColor; /*#ffffff; */
+  background-color: green;
+}
