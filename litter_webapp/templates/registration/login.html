@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block flash %}
+  {% if form.errors %}
+  <div class="flash error">
+    <p>Your username and password didn't match. Please try again.</p>
+  </div>
+  {% endif %}
+
+  {% if next %}
+      {% if user.is_authenticated %}
+        <div class="flash notice">
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        </div>
+      {% else %}
+        <div class="flash notice">
+        <p>Please login to see this page.</p>
+        </div>
+      {% endif %}
+  {% endif %}
+{% endblock %}
+
+
+
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# TODO: setup the password_reset view in a URLconf #}
+
+{% endblock %}

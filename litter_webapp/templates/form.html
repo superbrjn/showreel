@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ title }} | {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% block flash %}
+  {% if form.errors.non_field_errors %}
+  <div class="flash error">
+    {{ form.errors.non_field_errors }}
+  </div>
+  {% endif %}
+
+  {% if notice %}
+  <div class="flash notice">
+    {{ notice }}
+  </div>
+  {% endif %}
+{% endblock %}
+
+<form method='POST'> {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+
+{% if form.instance %}
+  <h1>{{ from.instance.name }}</h1>
+{% endif %}
+
+{% endblock %}

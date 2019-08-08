@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head_title %}Posts | {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+
+<h1>{{ object.title }} <small>{{ object.blogger }}</small></h1>
+<p>{{ object.content }}</p>
+<p>{{ object.timestamp }}, Updated {{ object.updated|timesince }} ago</p>
+
+{% endblock %}

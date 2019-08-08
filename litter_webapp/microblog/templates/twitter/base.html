@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="styles/css" href="{{ STATIC_URL }}style.css">
+    <!--<script src="{{ STATIC_URL }}less.js"></script>-->
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <!--<img src="{{ STATIC_URL }}gfx/logo.png">-->
+            <span>Litter WebApp</span>
+            {% block login %}
+            <a href="/">Home</a>
+            <a href="/users/">Public Profiles</a>
+            <a href="/users/{{ username }}">My Profile</a>
+            <a href="/tweets">Public Posts</a>
+            <form action="/logout">
+                <input type="submit" id="btnLogOut" value="Log Out">
+            </form>
+            {% endblock %}
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="wrapper">
+            {% block flash %}
+
+            {% if auth_form.non_field_errors or user_form.non_field_errors or post_form.errors %}
+            <div class="flash error">
+                {{ auth_form.non_field_errors }}
+                {{ user_form.non_field_errors }}
+                {{ post_form.content.errors }}
+            </div>
+            {% endif %}
+
+            {% if notice %}
+            <div class="flash notice">
+                {{ notice }}
+            </div>
+            {% endif %}
+
+            {% endblock %}
+
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

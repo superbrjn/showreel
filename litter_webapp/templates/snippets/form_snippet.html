@@ -1,0 +1,18 @@
+{% block flash %}
+  {% if form.errors.non_field_errors %}
+  <div class="flash error">
+    {{ form.errors.non_field_errors }}
+  </div>
+  {% endif %}
+
+  {% if notice %}
+  <div class="flash notice">
+    {{ notice }}
+  </div>
+  {% endif %}
+{% endblock %}
+
+<form method='POST'> {% csrf_token %}
+    {{ form.as_p }}
+    <button type='submit'>Save</button>
+</form>

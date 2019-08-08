@@ -1,0 +1,32 @@
+.flash {
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.flash .error {
+    background: #ffefef;
+    color: #4c1717;
+    border: 1px solid #4c1717;
+}
+
+.flash .warning {
+    background: #ffe4c1;
+    color: #79420d;
+    border: 1px solid #79420d;
+}
+
+.flash .notice {
+        background: #efffd7;
+        color: #8ba015;
+        border: 1px solid #8ba015;
+}
+
+input {
+    width: 179px;
+}
+
+input .error {
+    background: #ffefef;
+    color: #4c1717;
+    border: 1px solid #4c1717;
+}

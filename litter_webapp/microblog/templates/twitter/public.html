@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="panel right">
+        <h1>Create a Micsropost</h1>
+        <p>
+            <form action="/submit" method="post">
+            {% for field in entry_form %}{% csrf_token %}
+            {{ field }}
+            {% endfor %}
+            <input type="hidden" value="{{ next_url }}" name="next_url">
+            <input type="submit" value="Micropost!">
+            </form>
+        </p>
+    </div>
+    <div class="panel left">
+        <h1>Public Posts</h1>
+        {% for entry in entries %}
+        <div class="tweetWrapper">
+            <img class="avatar" src="{{ entry.user.profile.gravatar_url }}">
+            <span class="name">{{ entry.user.first_name }}</span>@{{ entry.user.username }}
+            <span class="time">{{ entry.creation_date|timesince }}</span>
+            <p>{{ entry.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
